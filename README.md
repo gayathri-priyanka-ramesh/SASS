@@ -1,5 +1,5 @@
 # SASS Learning Repository
-This repository contains the files I created while learning SASS from the <b>SASS Complete Tutorial</b> by <b>Tutor Joes</b> on <b>YouTube</b>, which provided a comprehensive guide to understanding and using SASS in web development.
+This repository contains the files I created while learning <b>SASS Complete Tutorial</b> by <b>Tutor Joes</b> on <b>YouTube</b>, which provided a comprehensive guide to understanding and using SASS in web development.
 
 ## What I Learned
 - <b>Introduction to SASS</b>: Understanding the role of SASS in web development.
