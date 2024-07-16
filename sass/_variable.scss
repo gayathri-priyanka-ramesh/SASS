@@ -1,0 +1,44 @@
+// Variables
+$primary-color: deepskyblue;
+$font-family: "Roboto", sans-serif;
+
+// Math Rules
+$base-font-size: 1rem; //1rem = 16px
+$font-size-sm: $base-font-size * 0.75; //16px * 0.75 = 12px
+$font-size-lg: $base-font-size * 1.50;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
+
+@use "sass:math";
+// Degubbing and Testing
+// @debug "Test Math Rules";
+// @debug "35px + 20" 35px + 20;
+// @debug "35px + 20px" 35px + 20px;
+// @debug 35px + 2rem; -> Error: 35px and 2rem have incompatible units (can be done only with compatible units)
+// @debug "max(25px, 100px, 200px)" max(25px, 100px, 200px);
+// @debug 'ceil(4.2)' ceil(4.2);
+// @debug 'ceil(4.9)' ceil(4.9);
+// @debug 'floor(4.2)' floor(4.2);
+// @debug 'floor(4.9)' floor(4.9);
+// @debug 'round(4.2)' round(4.2);
+// @debug 'round(4.9)' round(4.9);
+// @debug "abs(-30rem)" abs(-30rem);
+// @debug "pow(17,3)" pow(17,3);
+// @debug "sqrt(17)" sqrt(17);
+// @debug "Is 199 unitless?" math.is-unitless(199);
+// @debug "Is 199rem unitless?" math.is-unitless(199rem);
+// @debug "Unit of 250" math.unit(250);
+// @debug "Unit of 250px" math.unit(250px);
+// @debug "Unit of 250px + 30px" math.unit(250px + 30px);
+// @debug "Unit of 250px * 30px" math.unit(250px * 30px);
+// @debug "Is px compatible to px?" math.compatible(40px, 3px);
+// @debug "Is px compatible to rem?" math.compatible(40px, 3rem);
+// @debug "Is em compatible to rem?" math.compatible(40em, 3rem);
+// @debug "Is cm compatible to mm?" math.compatible(40cm, 3mm);
+// @debug "25px/2 without math.div()" 25px/2;
+// @debug "25px/2" math.div(25px,2);
+// @debug "25px/2px" math.div(25px,2px);
+// @debug "Random integer below 5000" math.random(5000);
+// @debug "Percentage value of 0.17" math.percentage(0.17);
+// @debug "Percentage value of 11.12" math.percentage(11.12);

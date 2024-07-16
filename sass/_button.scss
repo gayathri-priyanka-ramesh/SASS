@@ -1,0 +1,43 @@
+$bg-primary-color: #0d63fd;
+$bg-success-color: #198754;
+$bg-danger-color: #de3545;
+
+.btn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+}
+.btn-primary{
+    background-color: $bg-primary-color;
+}
+.btn-success{
+    background-color: $bg-success-color;
+}
+.btn-danger{
+    background-color: $bg-danger-color;
+}
+
+// Mixin with Parameters
+@mixin button($bg-color, $text-color){
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover{
+        background-color: darken($bg-color, 15%);
+    }
+}
+.button-primary{
+    @include button((#ff0000), white);
+}
+.button-secondary{
+    @include button((#0000ff), white);
+}
+.button-tertiary{
+    @include button((#ffff00), black);
+}

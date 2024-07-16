@@ -1,0 +1,83 @@
+Reference: https://sass-lang.com/
+
+SASS (Syntactically Awesome Style Sheets) is a CSS Preprocessor stored with extension '.scss' or '.sass'
+.sass or .scss file is compiled to either .css or .min.css file
+
+
+.sass -> No usage of {} and ; but uses indentation
+index.sass File:
+
+$primary-color: blue
+$primary-bg: red
+body 
+  color: $primary-color
+  background: $primary-bg
+
+
+.scss -> Uses {} and ; as in .css
+index.scss File:
+
+$primary-color: blue;
+$primary-bg: red;
+body{
+  color: $primary-color;
+  background: $primary-bg;
+}
+
+
+Both the above file give the same '.css' and '.min.css' files when compiled
+.css -> Multiple lines of code
+style.css File:
+
+body {
+  color: blue;
+  background: red;
+}
+
+
+.min.css -> Compressed form of entire '.css' file in only one line of code without any extra spaces
+style.min.css File:
+
+body{color:blue;background:red;}
+
+
+
+Steps:
+
+Install Node Js
+
+Check Node Version ->
+    'node -v' or 'node --version' (in System cmd)
+
+Check Node Package Manager Version ->
+    'npm -v' or 'npm --version' (in System cmd)
+
+Create seperate folder for the project
+
+Install SASS Compiler as an NPM Module to create 'package.json' File ->
+    'npm init -y' (in VsCode Terminal)
+
+Rename the 'name' key in 'package.json' file (optional) ->
+    "name": "sass" (default)
+
+Install SASS as Developer Dependency (only for Developers and not for Customers) to download the Node Modules that are dependent to eachother inside the folder 'node_modules' ->
+    'npm i sass -D'
+
+Create folders with files 'src/index.html', 'css', 'sass/index.scss'
+
+Store the compiled files inside 'css' folder with name 'style.css' ->
+    Add a Key-Value pair inside 'package.json' file inside 'scripts'->
+        "start": "sass ./sass/index.scss ./css/style.css ->
+            This also creates a source map 'style.css.map'
+            Need to use 'npm start' in VsCode Terminal after each change in '.scss' file
+
+        "start": "sass ./sass/index.scss ./css/style.css --watch" ->
+            '--watch' is used to update the changes in '.css' file when edited in '.scss' file
+
+        "start": "sass ./sass/index.scss ./css/style.css && sass ./sass/index.scss css/style.min.css --style=compressed --no-source-map --watch" ->
+            '&&' creates '.css' and '.min.css' files inside the 'css' folder ()
+            '--style=compressed' stores the compressed form of '.css' file
+            '--no-source-map' doesn't create a source map for the '.min.css' file
+
+Start the process ->
+    'npm start' in VsCode Terminal

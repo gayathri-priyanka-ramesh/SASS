@@ -1,0 +1,74 @@
+// Utility Classes -> Used for Padding, Margin, Opacity, Font Size, Flex, etc.
+$padding: 10px;
+$utilities: (
+    "padding": (
+        "prefix" : "p",
+        "p-values" : (
+            "0" : 0,
+            "1" : $padding,
+            "2" : $padding * 2,
+            "3" : $padding * 3,
+            "4" : $padding * 4,
+        ),
+    ),
+    "padding-top": (
+        "prefix" : "ptop",
+        "p-values" : (
+            "0" : 0,
+            "1" : $padding,
+            "2" : $padding * 2,
+            "3" : $padding * 3,
+            "4" : $padding * 4,
+        ),
+    ),
+    "padding-right": (
+        "prefix" : "pright",
+        "p-values" : (
+            "0" : 0,
+            "1" : $padding,
+            "2" : $padding * 2,
+            "3" : $padding * 3,
+            "4" : $padding * 4,
+        ),
+    ),
+    "padding-bottom": (
+        "prefix" : "pbottom",
+        "p-values" : (
+            "0" : 0,
+            "1" : $padding,
+            "2" : $padding * 2,
+            "3" : $padding * 3,
+            "4" : $padding * 4,
+        ),
+    ),
+    "padding-left": (
+        "prefix" : "pleft",
+        "p-values" : (
+            "0" : 0,
+            "1" : $padding,
+            "2" : $padding * 2,
+            "3" : $padding * 3,
+            "4" : $padding * 4,
+        ),
+    ),
+);
+
+@each $property, $map in $utilities{
+    // @debug "``````````Outer Loop``````````";
+    // @debug "Property" $property;
+    // @debug "Map" $map;
+    $prefix : map-get($map: $map, $key: "prefix");
+    // @debug "Prefix" $prefix;
+    $p-values : map-get($map: $map, $key: "p-values");
+    // @debug "P-Values" $p-values;
+    @each $key, $value in $p-values{
+        // @debug "~~~~~~~~~~Inner Loop~~~~~~~~~~";
+        // @debug "Key" $key;
+        // @debug "Value" $value;
+        .#{$prefix}-#{$key}{
+            #{$property} : $value;
+        }
+        // @debug "----------End of Outer Loop----------"
+    }
+    // @debug "__________End of Outer Loop__________"
+}

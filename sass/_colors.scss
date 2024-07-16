@@ -1,0 +1,48 @@
+// Maps
+$colors: (
+    "success": #188754,
+    "warning": #ffc107,
+    "danger": #ea162b,
+    "primary": #0d6efd,
+    "secondary":#ff8c08, 
+    "tertiary":#ff0073
+);
+// @debug "Value of the Key 'success'" map-get($map: $colors, $key: "success");
+// @debug "Is the Key 'info' present?" map-has-key($map: $colors, $key: "info");
+// @debug "Is the Key 'secondary' present?" map-has-key($map: $colors, $key: "secondary");
+// @debug "Remove the Pair with Key 'success'" map-remove($map: $colors, $key: "success");
+// @debug "Adding the Key-Value Pairs with Keys 'text', 'background' and Value '#eee', '#fff'" map-merge($map1: $colors, $map2: ("text":#eee,"backgroud":#222));
+
+.text-white{
+    color: #eee;
+}
+
+// Control Directives
+@each $key, $value in $colors{
+    // .text-success{ color:#188754; }
+    // .background-success{ color:#188754; }
+    // Loop to make the above assignment in .css file for each Key-Value pair in the Map
+    // '#' -> concatenates string value of variable inside '{}'
+    .text-#{$key}{
+        color: $value;
+    }
+    .bg-#{$key}{
+        background-color: $value;
+    }
+
+    // Loop each Key-Value Pair from Map through a range
+    @for $i from 1 through 4{
+        .text-#{$key}-light-#{$i}{
+            color: lighten($color: $value, $amount: $i * 10);
+        }
+        .bg-#{$key}-light-#{$i}{
+            background-color: lighten($color: $value, $amount: $i * 5);
+        }
+        .text-#{$key}-dark-#{$i}{
+            color: darken($color: $value, $amount: $i * 10);
+        }
+        .bg-#{$key}-dark-#{$i}{
+            background-color: darken($color: $value, $amount: $i * 5);
+        }
+    }
+}
